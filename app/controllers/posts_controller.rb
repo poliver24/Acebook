@@ -5,11 +5,15 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    # p @post
+    # p posts_url
     redirect_to posts_url
   end
 
   def index
-    @posts = Post.all
+    # @posts = Post.all
+    @posts = Post.order(created_at: :desc)
+    p @posts
   end
 
   private
