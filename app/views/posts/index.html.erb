@@ -11,10 +11,10 @@
   <%= link_to "Log In", login_path %>
 <br>
 <% end %>
-
+<ul>
 <% @posts.each do |post| %>
-  <p> <%=post.created_at %><br><%= simple_format(post.message) %></p>
+  <li><%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %></li>
 <% end %>
-
+</ul>
 <%= link_to "New Post", new_post_path %>
 
