@@ -26,4 +26,16 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(200)
     end
   end
+
+  describe "PATCH /" do
+    it "updates a post" do
+      post :create, params: { post: { id: 1, message: "Hello, world!" } }
+      patch :update, params: { post: { id: 1, message: "Hello, everyone!" } }
+      p Post.find_by(id: 1)
+      # p Post.find_by(id: 1).messsage
+      expect(Post.find_by(id: 1).message).not_to eq "Hello, world!"
+      expect(Post.find_by(id: 1).message).to eq "Hello, everyone!"
+    end
+  end
+
 end
