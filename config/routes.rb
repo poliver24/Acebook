@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy'
   get 'signup', to: 'users#new'
+  get 'delete', to: 'posts#destroy'
 end
