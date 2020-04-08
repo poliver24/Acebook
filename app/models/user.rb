@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts
   has_secure_password
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
