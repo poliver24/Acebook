@@ -274,10 +274,9 @@
         1,
         1,
         null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
         null
       ],
       "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/helpers/application_helper.rb": [
@@ -304,6 +303,7 @@
         null,
         null,
         1,
+        null,
         5,
         null,
         null,
@@ -317,6 +317,14 @@
       "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
+        1,
+        6,
+        4,
+        null,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/controllers/sessions_controller_spec.rb": [
@@ -352,18 +360,24 @@
       ],
       "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/controllers/sessions_controller.rb": [
         1,
+        1,
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        null,
+        1,
+        1,
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -401,7 +415,6 @@
         2,
         2,
         null,
-        4,
         4,
         null,
         null,
@@ -575,7 +588,6 @@
         null
       ]
     },
-
-    "timestamp": 1586259126
+    "timestamp": 1586337918
   }
 }
