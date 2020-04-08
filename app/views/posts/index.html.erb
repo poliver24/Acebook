@@ -3,6 +3,8 @@
 <% if current_user %>
   Welcome <%= current_user.name %>
   <br>
+  <%= link_to "New Post", new_post_path %>
+  <br>
  <%= link_to "Logout", logout_path %>
 <br>
 <% else %>
@@ -16,5 +18,5 @@
   <p> <%=post.created_at %><br><%= simple_format(post.message) %><%= post.user.name %></p>
 <% end %>
 
-<%= link_to "New Post", new_post_path %>
+
 
