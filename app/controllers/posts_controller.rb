@@ -12,12 +12,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    if current_user 
+    @post = current_user.posts.create(post_params)
     redirect_to posts_url
+    else
+      render "new"
+    end
   end
 
   def index
-    # @posts = Post.all
     @posts = Post.order(created_at: :desc)
   end
 
