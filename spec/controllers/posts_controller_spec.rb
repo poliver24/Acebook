@@ -28,13 +28,17 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "PATCH /" do
+
+    # let(:current_user) { double :current_user, id: 1 }
+
     it "updates a post" do
-      post :create, params: { post: { id: 1, message: "Hello, world!" } }
-      patch :update, params: { post: { id: 1, message: "Hello, everyone!" } }
-      p Post.find_by(id: 1)
+
+      post = Post.create({ message: "Hello world!" })
+      patch :update, params: { id: "#{post.id}", post: { message: "Hello, everyone!" } }
+      p Post.find_by(id: "#{post.id}")
       # p Post.find_by(id: 1).messsage
-      expect(Post.find_by(id: 1).message).not_to eq "Hello, world!"
-      expect(Post.find_by(id: 1).message).to eq "Hello, everyone!"
+      expect(Post.find_by(id: "#{post.id}").message).not_to eq "Hello, world!"
+      expect(Post.find_by(id: "#{post.id}").message).to eq "Hello, everyone!"
     end
   end
 

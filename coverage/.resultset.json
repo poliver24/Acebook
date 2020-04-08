@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/controllers/posts_controller_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/controllers/posts_controller_spec.rb": [
         1,
         null,
         1,
@@ -32,19 +32,23 @@
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        0,
         null,
-        0,
-        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/rails_helper.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -103,14 +107,14 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/environment.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/application.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/application.rb": [
         1,
         null,
         1,
@@ -130,12 +134,12 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/boot.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/environments/test.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/environments/test.rb": [
         1,
         null,
         null,
@@ -179,7 +183,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/application_controller_renderer.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -187,7 +191,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/assets.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -203,7 +207,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/backtrace_silencers.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -212,20 +216,20 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/cookies_serializer.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/inflections.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -243,13 +247,13 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/mime_types.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/initializers/wrap_parameters.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -265,7 +269,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/config/routes.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/config/routes.rb": [
         1,
         1,
         null,
@@ -286,24 +290,25 @@
         1,
         1,
         null,
+        1,
         1,
         1,
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/helpers/application_helper.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/helpers/sessions_helper.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/helpers/users_helper.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/controllers/posts_controller.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/controllers/posts_controller.rb": [
         1,
         1,
         2,
@@ -312,10 +317,14 @@
         1,
         0,
         null,
+        0,
+        0,
+        null,
+        null,
         null,
         1,
-        4,
-        4,
+        3,
+        3,
         null,
         null,
         1,
@@ -324,9 +333,28 @@
         null,
         null,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
         null,
         null,
         1,
@@ -336,20 +364,22 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/controllers/application_controller.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/controllers/application_controller.rb": [
         1,
         1,
         1,
         1,
+        9,
         8,
-        8,
+        1,
+        1,
         null,
         0,
         null,
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/controllers/sessions_controller_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/controllers/sessions_controller_spec.rb": [
         1,
         null,
         1,
@@ -376,7 +406,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/controllers/sessions_controller.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/controllers/sessions_controller.rb": [
         1,
         1,
         null,
@@ -399,7 +429,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/controllers/users_controller_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -419,7 +449,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/controllers/users_controller.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/controllers/users_controller.rb": [
         1,
         1,
         6,
@@ -443,14 +473,14 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/features/user_authentication_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/features/user_authentication_spec.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/features/user_registration_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/features/user_registration_spec.rb": [
         1,
         null,
         1,
@@ -496,7 +526,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/features/users_can_submit_posts_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/features/users_can_submit_posts_spec.rb": [
         1,
         null,
         null,
@@ -515,24 +545,7 @@
         null,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/helpers/sessions_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/helpers/users_helper_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/helpers/sessions_helper_spec.rb": [
         1,
         null,
         null,
@@ -549,30 +562,47 @@
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/models/post_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/helpers/users_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/models/post_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/models/post.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/models/post.rb": [
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/models/application_record.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/models/user_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/models/user_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/app/models/user.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/app/models/user.rb": [
         1,
         1,
         null,
@@ -583,28 +613,28 @@
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/views/sessions/create.html.erb_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/views/sessions/create.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/views/sessions/destroy.html.erb_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/views/sessions/destroy.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/views/sessions/new.html.erb_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/views/sessions/new.html.erb_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/lukedonovan/Projects/makers/week8/acebook-5Makerteers/spec/views/user/index.html.erb_spec.rb": [
+      "/Users/student/Projects/Makers/week_8/acebook-5Makerteers/spec/views/user/index.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -612,6 +642,6 @@
         null
       ]
     },
-    "timestamp": 1586351995
+    "timestamp": 1586363052
   }
 }
