@@ -22,17 +22,16 @@ class PostsController < ApplicationController
   end
 
   def update
-    p params
     @post = Post.find(params[:id])
-    if current_user.id == 1
+    # if current_user.id == 1
       if @post.update(post_params)
         redirect_to posts_url
       else
         render 'edit'
       end
-    else
-      flash.now[:alert] = "You can't edit other people's posts"
-    end
+    # else
+    #   flash.now[:alert] = "You can't edit other people's posts"
+    # end
   end
 
   def destroy
