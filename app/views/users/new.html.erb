@@ -17,7 +17,9 @@
           <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
         </div>
       <% end %>
-      <%= f.submit("Create Account", class:"btn btn-primary", data: {:confirm => msg('Do you want to create account?'), :disable_with => 'Creating'}) %>
+      <%= f.submit("Submit", class:"btn btn-primary") %>
     <% end %>
   </div>    
 </div>
+
+# data: {:confirm => msg('Do you want to create account?'), :disable_with => 'Creating'}
