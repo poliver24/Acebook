@@ -38,4 +38,10 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Hello, world!")
     expect(page).to have_content("Tester")
   end
+
+  scenario "You can see what date and time you made a post" do
+    sign_up_and_create
+    expect(page).to have_content("#{Time.now.strftime("%d %b %Y at %H:%M")}")
+    expect(page).to have_content("Hello, world!")
+  end
 end
