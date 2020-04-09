@@ -48,7 +48,10 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PATCH /" do
 
-    # let(:current_user) { double :current_user, id: 1 }
+    let(:user) { User.create(name: "name", email: "email@mail.com", password: "password" )}
+    before do
+      allow_any_instance_of(PostsController).to receive(:current_user) { user }
+    end
 
     it "updates a post" do
 

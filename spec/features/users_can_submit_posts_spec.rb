@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature "Timeline", type: :feature do
 
   def sign_up_and_create
-    visit "/posts"
+    visit "/"
     click_link "Sign Up!"
     fill_in "user_name", with: "Tester"
     fill_in "user_email", with: "tester@mail.com"
