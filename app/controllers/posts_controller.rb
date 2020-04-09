@@ -7,15 +7,15 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
 
-    if !current_user || current_user.id != 1
+    if !current_user || current_user.id != post.user_id
       redirect_to posts_url, notice: "You cannot edit this post"
     end
   end
 
   def create
     if current_user 
-    @post = current_user.posts.create(post_params)
-    redirect_to posts_url
+      @post = current_user.posts.create(post_params)
+      redirect_to posts_url
     else
       render "new"
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if !current_user || current_user.id != 1
+    if !current_user || current_user.id != post.user_id
       redirect_to posts_url, notice: "You cannot delete this post"
     else
       @post.destroy

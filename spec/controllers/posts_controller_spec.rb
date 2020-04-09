@@ -49,16 +49,16 @@ RSpec.describe PostsController, type: :controller do
   describe "PATCH /" do
 
     let(:user) { User.create(name: "name", email: "email@mail.com", password: "password" )}
+    let(:current_user) { user }
+
     before do
       allow_any_instance_of(PostsController).to receive(:current_user) { user }
     end
 
     it "updates a post" do
 
-      post = Post.create({ message: "Hello world!" })
+      post = current_user.posts.create({ message: "Hello world!" })
       patch :update, params: { id: "#{post.id}", post: { message: "Hello, everyone!" } }
-      p Post.find_by(id: "#{post.id}")
-      # p Post.find_by(id: 1).messsage
       expect(Post.find_by(id: "#{post.id}").message).not_to eq "Hello, world!"
       expect(Post.find_by(id: "#{post.id}").message).to eq "Hello, everyone!"
     end
