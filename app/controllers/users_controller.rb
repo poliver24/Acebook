@@ -14,8 +14,17 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
   end
 
+  def show
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: @user.id).order(created_at: :desc)
+  end
+
   def index
-    @posts = Post.where(user_id: current_user.id).order(created_at: :desc)
+    if current_user
+      @posts = Post.where(user_id: current_user.id).order(created_at: :desc)
+    else
+      redirect_to login_url
+    end
   end
 
   private
