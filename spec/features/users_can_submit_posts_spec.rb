@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-
-
 RSpec.feature "Timeline", type: :feature do
 
   def sign_up_and_create
@@ -44,4 +42,22 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("#{Time.now.strftime("%d %b %Y at %H:%M")}")
     expect(page).to have_content("Hello, world!")
   end
+
+  # Include gem 'orderly' to get 'appear_before' working.
+  scenario "posts can display is descending order" do 
+    sign_up_and_create
+    click_link "New Post"
+    fill_in "Message", with: "Hello, world 2!"
+    click_button "Submit"
+    expect("Hello, world 2!").to appear_before "Hello, world!" 
+  end
+
+  # scenario "Posts can display break lines/whitespace" do
+  #   sign_up_and_create  
+  #   click_link "New Post"
+  #   fill_in "Message", with: "This\nmessage\nhas line\nbreaks"
+  #   click_button "Submit"
+  #   expect(page).to have_content "This\n<br />message\n<br />has line\n<br />breaks"
+  #   expect(page).to have_content "Hello, world!"
+  # end
 end
