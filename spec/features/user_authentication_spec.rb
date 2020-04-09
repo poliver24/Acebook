@@ -17,7 +17,7 @@ RSpec.feature "Authentication", type: :feature do
     fill_in "email", with: "tester@mail.com"
     fill_in "password", with: "testing1"
     click_button "Login"
-    expect(page).to have_content "Logged in!"
+    expect(page).to have_content "Tester's Wall"
     expect(page).to have_content "Welcome Tester"
   end
 
