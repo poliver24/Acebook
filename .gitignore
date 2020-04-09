@@ -22,4 +22,4 @@ coverage
 /yarn-error.log
 
 .byebug_history
-
+/coverage
