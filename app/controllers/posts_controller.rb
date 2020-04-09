@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
 
-    if !current_user || current_user.id != 1
+    if !current_user || current_user.id != @post.user_id
       redirect_to posts_url, notice: "You cannot edit this post"
     end
   end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    binding.pry
+    # binding.pry
     @post = Post.find(params[:id])
     # if current_user.id == 1
       if @post.update(post_params)
@@ -34,14 +34,11 @@ class PostsController < ApplicationController
       else
         render 'edit'
       end
-    # else
-    #   flash.now[:alert] = "You can't edit other people's posts"
-    # end
   end
 
   def destroy
     @post = Post.find(params[:id])
-    if !current_user || current_user.id != 1
+    if !current_user || current_user.id != @post.user_id
       redirect_to posts_url, notice: "You cannot delete this post"
     else
       @post.destroy
