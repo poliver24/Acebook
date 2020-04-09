@@ -50,6 +50,8 @@ RSpec.describe PostsController, type: :controller do
 
     let(:user) { User.create(name: "name", email: "email@mail.com", password: "password" )}
     let(:current_user) { user }
+    # let(:plus_10) {now: (Time.now + 60*10)}
+    
 
     before do
       allow_any_instance_of(PostsController).to receive(:current_user) { user }
@@ -61,6 +63,17 @@ RSpec.describe PostsController, type: :controller do
       patch :update, params: { id: "#{post.id}", post: { message: "Hello, everyone!" } }
       expect(Post.find_by(id: "#{post.id}").message).not_to eq "Hello, world!"
       expect(Post.find_by(id: "#{post.id}").message).to eq "Hello, everyone!"
+    end
+
+     it "cannot update a post after 10 minutes" do
+      @time_now = (Time.now + 60*11)
+      # allow_any_instance_of(PostsController).to receive(:Time.now){ plus_10 }
+      allow(Time).to receive(:now).and_return(@time_now)
+
+      post = current_user.posts.create({ message: "Hello, world!" })
+      get :edit, params: { id: "#{post.id}", post: { message: "Hello, everyone!" } }
+      expect(Post.find_by(id: "#{post.id}").message).not_to eq "Hello, everyone!"
+      expect(Post.find_by(id: "#{post.id}").message).to eq "Hello, world!"
     end
   end
 

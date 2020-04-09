@@ -6,8 +6,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-
-    if !current_user || current_user.id != post.user_id
+    if !current_user || current_user.id != @post.user_id || Time.now > (@post.created_at + (60*10))
       redirect_to posts_url, notice: "You cannot edit this post"
     end
   end
@@ -40,7 +39,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if !current_user || current_user.id != post.user_id
+    if !current_user || current_user.id != @post.user_id
       redirect_to posts_url, notice: "You cannot delete this post"
     else
       @post.destroy
