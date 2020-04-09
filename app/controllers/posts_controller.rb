@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if !current_user || current_user.id != @post.user_id || Time.now > (@post.created_at + (60*10))
+    if !current_user || current_user.id != @post.user_id || Time.now > (@post.created_at + (600))
       redirect_to posts_url, notice: "You cannot edit this post"
     end
   end

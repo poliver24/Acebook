@@ -66,7 +66,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
      it "cannot update a post after 10 minutes" do
-      @time_now = (Time.now + 60*11)
+      @time_now = (Time.now + 601)
       # allow_any_instance_of(PostsController).to receive(:Time.now){ plus_10 }
       allow(Time).to receive(:now).and_return(@time_now)
 
