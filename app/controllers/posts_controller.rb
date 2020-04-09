@@ -26,7 +26,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    binding.pry
     @post = Post.find(params[:id])
     # if current_user.id == 1
       if @post.update(post_params)
