@@ -32,9 +32,6 @@ class PostsController < ApplicationController
       else
         render 'edit'
       end
-    # else
-    #   flash.now[:alert] = "You can't edit other people's posts"
-    # end
   end
 
   def destroy

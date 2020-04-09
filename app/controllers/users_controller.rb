@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     session[:user_id] = @user.id
   end
 
+  def index
+    @posts = Post.where(user_id: current_user.id).order(created_at: :desc)
+  end
+
   private
 
   def user_params
