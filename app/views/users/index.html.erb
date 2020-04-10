@@ -1,4 +1,0 @@
-<h2><%= current_user.name %>'s Wall</h2>
-<% @posts.each do |post| %>
-  <p> <%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %><%= post.user.name %></p>
-<% end %>

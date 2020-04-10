@@ -2,17 +2,10 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+    describe "GET #show" do
+        it "returns http success" do
+            expect(get: '/users/1').to route_to(controller: 'users', action: 'show', id: "1")
+        end
     end
-  end
-  describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
 
 end

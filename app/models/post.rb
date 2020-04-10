@@ -1,4 +1,4 @@
 class Post < ApplicationRecord
-  belongs_to :user
   # delegate :name, :to => :user
+  belongs_to :user
 end
