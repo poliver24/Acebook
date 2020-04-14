@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
- 
- 
+  mount ActionCable.server => '/cable'
+
+  get 'chatroom/show'
+
+  # resources :chatroom, only: [:show]
 
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   # get 'sessions/new'
