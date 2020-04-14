@@ -1,12 +1,10 @@
 class User < ApplicationRecord
-has_many :posts 
-EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates_presence_of :name, :message => 'You Must Enter a Name'
-  validates_presence_of :email, :message => 'You Must Enter an Email Address'
-  validates_uniqueness_of :email, :message => 'This email already exists' 
-  validates :email, :format => EMAIL_REGEX
-  validates_presence_of :password, :message => 'You Must Enter a Password'
-  validates_length_of :password, :in => 6..10, :on => :create
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  has_secure_password
+  has_many :posts 
+
+  validates_presence_of :name, :message => 'You Must Enter a Name'
 end

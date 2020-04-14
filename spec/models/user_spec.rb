@@ -1,9 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+   
   subject {
     described_class.new(name: "Peter", email: "peter@test.com", password: "123456")
   }
+
   it "is valid with valie attributes" do
     expect(subject).to be_valid
   end
@@ -23,10 +25,6 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 end
-
-
-
-
 
 
 # subject {

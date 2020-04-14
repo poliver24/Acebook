@@ -1,21 +1,23 @@
-<p id=”notice”><%= notice %></p>
-
-<% if current_user %>
-  Welcome <%= current_user.name %>
+<% if current_user%>
+  Welcome <%=current_user.name%>
   <br>
   <%= link_to "New Post", new_post_path %>
   <br>
-  <%= link_to "Logout", logout_path %>
+  <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
   <br>
-  <% else %>
-  <%= link_to "Sign Up!", signup_path %>
+<%else%>
+  <%= link_to "Sign Up!", new_user_registration_path %>
   <br>
-  <%= link_to "Log In", login_path %>
+  <%= link_to "Log In", new_user_session_path %>
   <br>
-<% end %>
+<%end%>
+
+
 <ul>
-<% @posts.each do |post| %>
-  <p> <%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %><%= post.user.name %></p>
-  <%= link_to "Edit Post", edit_post_path(post) %>
-  <%= link_to "Delete Post", post_path(post), :method => :delete %>
-<% end %>
+<%if @posts%>
+  <% @posts.each do |post| %>
+    <p> <%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %><%= post.user.name %></p>
+    <%= link_to "Edit Post", edit_post_path(post) %>
+    <%= link_to "Delete Post", post_path(post), :method => :delete %>
+  <% end %>
+<%end%>

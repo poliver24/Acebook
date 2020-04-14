@@ -10,9 +10,10 @@ RSpec.feature "Timeline", type: :feature do
     fill_in "user_name", with: "Tester"
     fill_in "user_email", with: "tester@mail.com"
     fill_in "user_password", with: "testing1"
-    click_button "Submit"
+    fill_in "user_password_confirmation", with: "testing1"
+    click_button "Sign up"
     click_link "New Post"
-    fill_in "Message", with: "Hello, world!"
+    fill_in "post_message", with: "Hello, world!"
     click_button "Submit"
   end
 
