@@ -12,16 +12,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    if current_user 
+    if current_user
       @post = current_user.posts.create(post_params)
-      redirect_to posts_url
+      redirect_to user_path(:id => post_params[:wall_id])
     else
       render "new"
     end
   end
-
+# wall_id: 0 || wall_id: :user_id
   def index
-    @posts = Post.order(created_at: :desc)
+    @post = Post.new
+    @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
   end
 
   def update
@@ -48,6 +49,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :wall_id)
   end
 end

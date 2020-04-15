@@ -1,7 +1,16 @@
 <% if current_user%>
   Welcome <%=current_user.name%>
   <br>
+  <%= form_for @post do |form| %>
+    <%= form.label :message %>
+    <%= form.text_area :message, placeholder: "What's on your mind?" %>
+    <%= form.hidden_field :wall_id, value: 0 %>
+
+    <%= form.submit "Submit" %>
+  <% end %>
+  <!--
   <%= link_to "New Post", new_post_path %>
+  -->
   <br>
   <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
   <br>

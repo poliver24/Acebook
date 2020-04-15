@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  
+
   mount ActionCable.server => '/cable'
 
   get 'chatroom/show'
+  get 'users/0' => redirect('/')
 
   # resources :chatroom, only: [:show]
 
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
 
    root 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+
   resources :posts
   resources :users
   # resources :sessions, only: [:new, :create, :destroy]
