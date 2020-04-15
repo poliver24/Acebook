@@ -15,3 +15,5 @@
 
 //= require rails-ujs
 //= require_tree .
+
+//=require wall_style
