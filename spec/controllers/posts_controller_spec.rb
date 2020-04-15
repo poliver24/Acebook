@@ -14,8 +14,8 @@ RSpec.describe PostsController, type: :controller do
       allow_any_instance_of(PostsController).to receive(:current_user) { user }
     end
     it "responds with 200" do
-      post :create, params: { post: { message: "Hello, world!" } }
-      expect(response).to redirect_to(posts_url)
+      post :create, params: { post: { message: "Hello, world!", wall_id: 0 } }
+      expect(response).to redirect_to("/users/0")
     end
   end
   
@@ -27,7 +27,7 @@ RSpec.describe PostsController, type: :controller do
     
     it "should create" do 
     expect {
-      post :create, params: { post: { message: "new post" } }
+      post :create, params: { post: { message: "new post", wall_id: 0 } }
     }.to change(Post, :count).by(1)
     end
   end
