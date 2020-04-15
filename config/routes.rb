@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   # resources :sessions, only: [:new, :create, :destroy]
   get "/:username" => "users#show"
   # get 'login', to: 'sessions#new', as: 'login'
+  post '/users/find', to: 'users#find'
+
   # get 'logout', to: 'sessions#destroy'
   # get 'signup', to: 'users#new'
   # get 'delete', to: 'posts#destroy'
