@@ -9,7 +9,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "POST /" do
-    let(:user) { User.create(name: "name", email: "email@mail.com", password: "password" )}
+    let(:user) { User.create(name: "name", username: 'username', email: "email@mail.com", password: "password" )}
     before do
       allow_any_instance_of(PostsController).to receive(:current_user) { user }
     end
@@ -20,7 +20,7 @@ RSpec.describe PostsController, type: :controller do
   end
   
   describe "create post" do
-    let(:user) { User.create(name: "name", email: "email@mail.com", password: "password" )}
+    let(:user) { User.create(name: "name", username: 'username', email: "email@mail.com", password: "password" )}
     before do
       allow_any_instance_of(PostsController).to receive(:current_user) { user }
     end
@@ -48,7 +48,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "PATCH /" do
 
-    let(:user) { User.create(name: "name", email: "email@mail.com", password: "password" )}
+    let(:user) { User.create(name: "name", username: 'username', email: "email@mail.com", password: "password" )}
     let(:current_user) { user }
     # let(:plus_10) {now: (Time.now + 60*10)}
     

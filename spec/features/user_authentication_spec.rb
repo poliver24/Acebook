@@ -5,6 +5,7 @@ RSpec.feature "Authentication", type: :feature do
     visit "/"
     click_link "Sign Up!"
     fill_in "user_name", with: "Tester"
+    fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
     fill_in "user_password", with: "testing1"
     fill_in "user_password_confirmation", with: "testing1"

@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def show
     if current_user
-      p params
       return render_not_found unless User.exists?(id: params[:id]) || User.exists?(username: params[:username])
       @user = User.find_by_username(params[:username]) || User.find(params[:id])
       @posts = Post.where(user_id: @user.id).order(created_at: :desc)

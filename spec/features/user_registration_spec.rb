@@ -6,6 +6,7 @@ scenario "User can signup with valid credentials" do
     visit "/"
     click_link 'Sign Up!'
     fill_in "user_name", with: "Tester"
+    fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
     fill_in "user_password", with: "testing1"
     fill_in "user_password_confirmation", with: "testing1"
@@ -17,6 +18,7 @@ scenario "User can signup with valid credentials" do
     visit "/"
     click_link 'Sign Up!' 
     fill_in "user_name", with: "Tester"
+    fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "testermail"
     fill_in "user_password", with: "testing1"
     fill_in "user_password_confirmation", with: "testing1"
@@ -28,6 +30,7 @@ scenario "User can signup with valid credentials" do
     visit "/"
     click_link 'Sign Up!'
     fill_in "user_name", with: "Tester"
+    fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
     fill_in "user_password", with: "testing1233445567899865434"
     fill_in "user_password_confirmation", with: "testing1233445567899865434"
@@ -39,6 +42,7 @@ scenario "User can signup with valid credentials" do
     visit "/"
     click_link 'Sign Up!'
     fill_in "user_name", with: "Tester"
+    fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
     fill_in "user_password", with: "testing"
     fill_in "user_password_confirmation", with: "testing"
