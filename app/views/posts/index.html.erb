@@ -8,19 +8,6 @@
 
     <%= form.submit "Submit" %>
   <% end %>
-  <!--
-  <%= link_to "New Post", new_post_path %>
-  -->
-  <br>
-  <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-  <br>
-  <%= link_to "Chatroom", chatroom_show_path%>
-  <br>
-<%else%>
-  <%= link_to "Sign Up!", new_user_registration_path %>
-  <br>
-  <%= link_to "Log In", new_user_session_path %>
-  <br>
 <%end%>
 
 

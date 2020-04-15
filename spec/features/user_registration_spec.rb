@@ -4,7 +4,7 @@ RSpec.feature "Timeline", type: :feature do
 
 scenario "User can signup with valid credentials" do
     visit "/"
-    click_link 'Sign Up!'
+    click_link 'Sign Up'
     fill_in "user_name", with: "Tester"
     fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
@@ -16,7 +16,7 @@ scenario "User can signup with valid credentials" do
 
   scenario "User cannot signup with invalid email" do
     visit "/"
-    click_link 'Sign Up!' 
+    click_link 'Sign Up' 
     fill_in "user_name", with: "Tester"
     fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "testermail"
@@ -28,7 +28,7 @@ scenario "User can signup with valid credentials" do
 
     scenario "User cannot signup with invalid password" do
     visit "/"
-    click_link 'Sign Up!'
+    click_link 'Sign Up'
     fill_in "user_name", with: "Tester"
     fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
@@ -40,7 +40,7 @@ scenario "User can signup with valid credentials" do
 
   scenario "users are signed in when they sign up" do
     visit "/"
-    click_link 'Sign Up!'
+    click_link 'Sign Up'
     fill_in "user_name", with: "Tester"
     fill_in "user_username", with: "tester1"
     fill_in "user_email", with: "tester@mail.com"
