@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   # resources :sessions, only: [:new, :create, :destroy]
-
+  get "/:username" => "users#show"
   # get 'login', to: 'sessions#new', as: 'login'
   # get 'logout', to: 'sessions#destroy'
   # get 'signup', to: 'users#new'

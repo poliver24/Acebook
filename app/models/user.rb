@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :posts 
 
   validates_presence_of :name, :message => 'You Must Enter a Name'
+  validates_presence_of :username, :message => 'You Must Enter a Userame'
+  validates_uniqueness_of :username, :message => 'This username is taken'
 end
