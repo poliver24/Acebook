@@ -1,9 +1,6 @@
 require 'pry'
 class PostsController < ApplicationController
   def new
-    p "I'm in 'new' path"
-    p params
-    # sessions[:wall_id] = params[:wall_id]
     @post = Post.new
   end
 
@@ -16,21 +13,16 @@ class PostsController < ApplicationController
 
   def create
     if current_user
-      "I'm in 'create' path"
-      p params
       @post = current_user.posts.create(post_params)
-      # @post.wall_id = sessions[:wall_id];
-
       redirect_to user_path(:id => post_params[:wall_id])
-
     else
       render "new"
     end
   end
-
+# wall_id: 0 || wall_id: :user_id
   def index
     @post = Post.new
-    @posts = Post.where(wall_id: 0).order(created_at: :desc)
+    @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
   end
 
   def update
