@@ -4,7 +4,9 @@ class UsersController < ApplicationController
     if current_user
       return render_not_found unless User.exists?(params[:id])
       @user = User.find(params[:id])
-      @posts = Post.where(user_id: @user.id).order(created_at: :desc)
+      @post = Post.new
+      # @posts = Post.where(user_id: @user.id).order(created_at: :desc)
+      @posts = Post.where(wall_id: @user.id).order(created_at: :desc)
     else
       redirect_to new_user_session_path
     end
