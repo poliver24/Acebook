@@ -1,35 +1,58 @@
-<% if current_user%>
-  Welcome <%=current_user.name%>
-    <br>
-    <%= link_to "New Post", new_post_path %>
-    <br>
-    <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-    <br>
-    <%= link_to "Chatroom", chatroom_show_path%>
-    <br>
-<%else%>
-    <%= link_to "Sign Up!", new_user_registration_path %>
-    <br>
-    <%= link_to "Log In", new_user_session_path %>
-    <br>
-<%end%>
+<div class="container">
 
 <h2><%= @user.name %>'s Wall</h2>
+<% if current_user.id == @user.id %>
+<div class="dropdown" style="margin-bottom:20px;">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Choose background
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <button class="colour-btn purple-btn"><span id="purple">.</span></button>
+  <button class="colour-btn blue-btn"><span id="blue">.</span></button>
+  <button class="colour-btn grey-btn"><span id="grey">.</span></button>
+  <button class="colour-btn white-btn"><span id="white">.</span></button>
+  
+  </div>
+</div>
+<% end %>
 
 <%= form_for @post, url: url_for(controller: 'posts', action: 'create') do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message, placeholder: @placeholder %>
+  <div class="form-group">
+  <%= form.text_area :message, placeholder: @placeholder, :class => "form-control box-area" %>
   <%= form.hidden_field :wall_id, value: params[:id] %>
-
-  <%= form.submit "Post to #{@user.name}'s wall" %>
+  </div>
+  <div class="form-group">
+  <%= form.submit "Post to #{@user.name}'s wall", :class => "btn btn-primary orange-button" %>
+  </div>
 <% end %>
 
-<!--
-<%= link_to "Post to #{@user.name}'s wall", new_post_path(:wall_id => @user.id) %>
--->
+
 
 <% @posts.each do |post| %>
-  <p> <%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %><%= post.user.name %></p>
-  <%= link_to "Edit Post", edit_post_path(post) %>
-  <%= link_to "Delete Post", post_path(post), :method => :delete %>
+
+  <div class="card box-area post-box d-flex flex-row">
+  <div class="card-body">
+    <div>
+    <%= link_to post.user.name, user_path(post.user), :class => "orange-text"%>
+    </div>
+    <div class="grey-text">
+      <%= distance_of_time_in_words_to_now(post.created_at)%> ago
+    </div>
+    <%= simple_format(post.message) %>
+</div>
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <%= link_to "Edit Post", edit_post_path(post), :class => "dropdown-item" %>
+  <%= link_to "Delete Post", post_path(post), :method => :delete, :class => "dropdown-item" %>
+  </div>
+  
+  </div>
+</div>
+  
 <% end %>
+
+</div>
+
+
