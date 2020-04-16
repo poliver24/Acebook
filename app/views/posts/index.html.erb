@@ -1,6 +1,6 @@
 Welcome <%=current_user.name%>
   <br>
-  <%= form_for @post do |form| %>
+  <%= form_for @new_post do |form| %>
     <%= form.label :message %>
     <%= form.text_area :message, placeholder: "What's on your mind?" %>
     <%= form.hidden_field :wall_id, value: 0 %>

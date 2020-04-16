@@ -1,0 +1,19 @@
+<h3>Search Results</h3>  
+<br>
+<h4>Users Relating to your Search:</h4>
+<% if @user_results.empty? %>
+    <h6>No Users relating to your search</h6>
+<%else%>
+    <% @user_results.each do |result| %>  
+        <%= link_to "#{result.username}", user_path(result.id) %><br>  
+    <% end %>
+<%end%>
+<br>
+<h4>Posts relating to your search:</h4>
+<% if @post_results.empty? %>
+    <h6>No Posts relating to your search</h6>
+<%else%>
+     <% @post_results.each do |result| %>  
+        <%= result.message %><br>  
+    <% end %>
+<%end%>
