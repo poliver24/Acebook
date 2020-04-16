@@ -18,9 +18,14 @@ Rails.application.routes.draw do
   # get 'users/new'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :comments
+  
+  # resources :posts do
+  #   resources :comments
+  # end
 
-  resources :posts
   resources :users
+  resources :posts
 
   authenticated :user do
     root :to => "posts#index"
@@ -33,6 +38,7 @@ Rails.application.routes.draw do
   # get 'login', to: 'sessions#new', as: 'login'
   post '/users/find', to: 'users#find'
 
+  post '/post/index', to: 'comments#create'
   # get 'logout', to: 'sessions#destroy'
   # get 'signup', to: 'users#new'
   # get 'delete', to: 'posts#destroy'

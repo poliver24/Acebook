@@ -3,14 +3,14 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-
+  
   def edit
     @post = Post.find(params[:id])
     if !current_user || current_user.id != @post.user_id || Time.now > (@post.created_at + (600))
       redirect_to posts_url, notice: "You cannot edit this post"
     end
   end
-
+  
   def create
     if current_user
       @post = current_user.posts.create(post_params)
@@ -19,10 +19,11 @@ class PostsController < ApplicationController
       render "new"
     end
   end
-# wall_id: 0 || wall_id: :user_id
+  # wall_id: 0 || wall_id: :user_id
   def index
     @post = Post.new
     @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
+    @comment = Comment.new
   end
 
   def update

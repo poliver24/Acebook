@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts 
+  has_many :comments
 
   validates_presence_of :name, :message => 'You Must Enter a Name'
   validates_presence_of :username, :message => 'You Must Enter a Userame'
