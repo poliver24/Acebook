@@ -1,6 +1,7 @@
 require 'pry'
 class PostsController < ApplicationController
   def new
+    # @comment = Comment.new(post_id: params[:post_id])
     @post = Post.new
   end
 
