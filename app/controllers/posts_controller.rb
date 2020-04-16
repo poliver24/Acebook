@@ -21,9 +21,6 @@ class PostsController < ApplicationController
   end
 # wall_id: 0 || wall_id: :user_id
   def index
-    if !current_user
-      redirect_to new_user_session_path
-    end
     @post = Post.new
     @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
   end

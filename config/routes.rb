@@ -17,11 +17,17 @@ Rails.application.routes.draw do
   # get 'users/index'
   # get 'users/new'
 
-   root 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :posts
   resources :users
+
+  authenticated :user do
+    root :to => "posts#index"
+  end
+  
+  root :to => redirect("/users/sign_in")
+
   # resources :sessions, only: [:new, :create, :destroy]
   get "/:username" => "users#show"
   # get 'login', to: 'sessions#new', as: 'login'
@@ -30,4 +36,6 @@ Rails.application.routes.draw do
   # get 'logout', to: 'sessions#destroy'
   # get 'signup', to: 'users#new'
   # get 'delete', to: 'posts#destroy'
+
+ 
 end

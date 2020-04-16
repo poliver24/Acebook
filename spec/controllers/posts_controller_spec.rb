@@ -40,6 +40,12 @@ RSpec.describe PostsController, type: :controller do
 # end
 
   describe "GET /" do
+    
+    let(:user) { User.create(name: "name", username: 'username', email: "email@mail.com", password: "password" )}
+    before do
+      allow_any_instance_of(PostsController).to receive(:current_user) { user }
+    end
+
     it "responds with 200" do
       get :index
       expect(response).to have_http_status(200)

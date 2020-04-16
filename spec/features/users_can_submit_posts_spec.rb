@@ -34,10 +34,10 @@ RSpec.feature "Timeline", type: :feature do
     expect(page).to have_content("Tester")
   end
 
-  scenario "You can see others users posts if you're not signed in." do
+  scenario "You cannot see others users posts if you're not signed in." do
     sign_up_and_create
     click_link "Logout"
-    expect(page).to have_content("Hello, world!")
-    expect(page).to have_content("Tester")
+    expect(page).not_to have_content("Hello, world!")
+    expect(page).not_to have_content("Tester")
   end
 end
