@@ -24,3 +24,76 @@
  $brand-warning: #f0ad4e !default;
  $brand-danger: #d9534f !default;
 @import "bootstrap";
+.box-area{
+  width: 100%;
+  @media (min-width: 1000px) { 
+    width: 50%;
+   }
+}
+textarea{
+  resize: none;
+}
+.orange-button{
+  background-color: #f59a00;
+  border: #f59a00
+}
+
+.post-box{
+  margin-bottom: 20px;
+}
+
+.test:after {
+  content: '\2807';
+  font-size: 3em;
+  color: #2e2e2e
+}
+
+ul{
+  list-style-type: none;
+}
+.orange-text{
+  color: #f59a00;
+  font-weight: 600;
+}
+.grey-text{
+  color: grey;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.chat-input{
+  display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+textarea, input{
+  outline: none;
+}
+h1, h2, h3{
+  color: #495057;
+  margin-top: 25px;
+}
+.colour-btn{
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
+  color: rgba(255, 99, 71, 0.0)
+}
+.purple-btn{
+  background-color: #c397de;
+}
+.blue-btn{
+  background-color: #bbdff0;
+}
+.grey-btn{
+  background-color: #dedce8;
+}
+.white-btn{
+  background-color: #ffffff;
+}

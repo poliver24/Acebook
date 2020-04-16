@@ -1,5 +1,6 @@
+<div class="container">
 <h2>Log in</h2>
-
+<div class="box-area">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">
     <%= f.label :email %><br />
@@ -22,5 +23,7 @@
     <%= f.submit "Log in", :class => "btn btn-primary", :style => "background-color: #f59a00; border: #f59a00" %>
   </div>
 <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
+</div>
