@@ -13,15 +13,15 @@ Welcome <%=current_user.name%>
 <%if @posts%>
   <% @posts.each do |post| %>
     <p> <%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %><%= post.user.name %></p>
-      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
-      <p>
-        <%= form.label :body %><br>
+
+      <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
         <%= form.text_area :body %>
-      </p>
-      <p>
-        <%= form.submit %>
-      </p>
+
+        <%= form.hidden_field :post_id, value: params[:post_id] %>
+        <%= form.submit  %>
       <% end %>
+
+
       <%= link_to "Edit Post", edit_post_path(post) %>
       <%= link_to "Delete Post", post_path(post), :method => :delete %>
       <br>

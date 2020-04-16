@@ -6,18 +6,16 @@ def new
 end
   
 def create
-  @post = Post.find(params[:post_id])
   p params
-  params[:comment][:user_id] = current_user.id
-  p params
-  @comment = @post.comments.create(comment_params)
+  p comment_params
+  @comment = current_user.comments.create(comment_params)
   
-  redirect_to posts_path
+  redirect_to root_path
 end
 
 private
   def comment_params  
-    params.require(:comment).permit(:user_id, :body)
+    params.require(:comment).permit(:post_id, :body)
   end
 end
 

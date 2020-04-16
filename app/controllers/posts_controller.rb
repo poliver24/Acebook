@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
-    @comment = Comment.new(post_id: params[:post_id])
+    @comment = Comment.new()
   end
 
   def update
