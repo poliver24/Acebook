@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # /index shows all posts where the wall_id = 0 (Newsfeed wall ID) or where the Wall_id = User_id (User posted on their own wall)
   # /index also allows us to create a new post
   def index
+    @comment = Comment.new
     @new_post = Post.new
     @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
   end

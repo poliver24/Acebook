@@ -26,20 +26,23 @@
       </div>
        <%= simple_format(post.message) %>
 
-       <%if !post.comments.empty?%>
-      <h4>Comments</h4>
-      <% post.comments.each do |comment|%>
-        <div class="form-group">
-        <%=comment.user.name%> - <%=comment.body%>
-        <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
-          <%= form.text_area :body, :class => "form-control box-area"  %>
 
-          <%= form.hidden_field :post_id, value: post.id %>
-          <%= form.submit  %>
-        <% end %>
+      <h6>Comments</h6>
+
+      <% post.comments.each do |comment|%>
+        <%=comment.user.name%> - <%=comment.body%>
       <%end%>
+
+        <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
+        <div class="form-group">
+          <%= form.text_area :body, :placeholder => "Write a comment...", :class => "form-control box-area"  %>
+        </div>
+          <%= form.hidden_field :post_id, value: post.id %>
+        <div class="form-group">
+          <%= form.submit  %>
+        </div>
+        <% end %>
       </div>
-    <%end%>
   </div>
 <div class="dropdown show">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
