@@ -16,3 +16,8 @@ private
     params.require(:comment).permit(:commenter, :body)
   end
 end
+
+
+# create_table :comments do |t|
+#   t.string :commenter
+#   t.text :body
