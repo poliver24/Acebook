@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
 def new
+  pry.binding
   @post = Post.find(params[:id])
   @comment = Comment.new
 end
