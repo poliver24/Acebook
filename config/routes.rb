@@ -2,46 +2,26 @@ Rails.application.routes.draw do
 
   mount ActionCable.server => '/cable'
 
-  get 'chatroom/show'
-  get 'users/0' => redirect('/')
-
-  # resources :chatroom, only: [:show]
-
-  devise_for :users, :controllers => { registrations: 'users/registrations' }
-  # get 'sessions/new'
-
-  # get 'sessions/create'
-
-  # get 'sessions/destroy'
-
-  # get 'users/index'
-  # get 'users/new'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :comments
-  
-  # resources :posts do
-  #   resources :comments
-  # end
-
-  resources :users
-  resources :posts
-
   authenticated :user do
     root :to => "posts#index"
   end
   
   root :to => redirect("/users/sign_in")
 
-  # resources :sessions, only: [:new, :create, :destroy]
+  get 'chatroom/show'
+  get 'users/0' => redirect('/')
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  resources :comments
+
+  resources :users
+  resources :posts
+
+  get '/search' => 'searches#search', :as => 'search_page'
   get "/:username" => "users#show"
-  # get 'login', to: 'sessions#new', as: 'login'
   post '/users/find', to: 'users#find'
 
   post '/post/index', to: 'comments#create'
-  # get 'logout', to: 'sessions#destroy'
-  # get 'signup', to: 'users#new'
-  # get 'delete', to: 'posts#destroy'
+
 
  
 end
