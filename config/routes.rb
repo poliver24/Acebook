@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   # get 'login', to: 'sessions#new', as: 'login'
   post '/users/find', to: 'users#find'
 
+  post '/post/index', to: 'comments#create'
   # get 'logout', to: 'sessions#destroy'
   # get 'signup', to: 'users#new'
   # get 'delete', to: 'posts#destroy'

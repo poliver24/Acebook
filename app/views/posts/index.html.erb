@@ -13,7 +13,7 @@ Welcome <%=current_user.name%>
 <%if @posts%>
   <% @posts.each do |post| %>
     <p> <%=post.created_at.strftime("%d %b %Y at %k:%M") %><br><%= simple_format(post.message) %><%= post.user.name %></p>
-      <%= form_for @comment do |form| %>
+      <%= form_with(model: [ post, post.comments.build ], local: true) do |form| %>
       <p>
         <%= form.label :body %><br>
         <%= form.text_area :body %>
