@@ -6,10 +6,7 @@ def new
 end
   
 def create
-  p params
-  p comment_params
   @comment = current_user.comments.create(comment_params)
-  
   redirect_to root_path
 end
 
