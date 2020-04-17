@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" style="margin-left: 18em">
 
 <h2><%= @user.name %>'s Wall</h2>
 <% if current_user.id == @user.id %>
 <div class="dropdown" style="margin-bottom:20px;">
-  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f59a00; border-color: #f59a00">
     Choose background
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -39,7 +39,7 @@
     <%= simple_format(post.message) %>
 </div>
 <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f59a00; border-color: #f59a00 ">
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
   <%= link_to "Edit Post", edit_post_path(post), :class => "dropdown-item" %>
