@@ -11,7 +11,7 @@
   <button class="colour-btn blue-btn"><span id="blue">.</span></button>
   <button class="colour-btn grey-btn"><span id="grey">.</span></button>
   <button class="colour-btn white-btn"><span id="white">.</span></button>
-  
+
   </div>
 </div>
 <% end %>
@@ -37,7 +37,27 @@
       <%= distance_of_time_in_words_to_now(post.created_at)%> ago
     </div>
     <%= simple_format(post.message) %>
+
+    <h6>Comments</h6>
+
+    <% post.comments.each do |comment|%>
+      <%=comment.user.name%> - <%=comment.body%><br>
+      <%= link_to 'Edit', edit_comment_path(comment) %>
+      <%= link_to "Delete", comment_path(comment), :method => :delete %>
+    <%end%>
+
+      <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
+      <div class="form-group">
+        <%= form.text_area :body, :placeholder => "Write a comment...", :class => "form-control box-area"  %>
+      </div>
+        <%= form.hidden_field :post_id, value: post.id %>
+      <div class="form-group">
+        <%= form.submit  %>
+      </div>
+      <% end %>
+
 </div>
+
 <div class="dropdown show">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f59a00; border-color: #f59a00 ">
   </a>
@@ -45,12 +65,10 @@
   <%= link_to "Edit Post", edit_post_path(post), :class => "dropdown-item" %>
   <%= link_to "Delete Post", post_path(post), :method => :delete, :class => "dropdown-item" %>
   </div>
-  
+
   </div>
 </div>
-  
+
 <% end %>
 
 </div>
-
-

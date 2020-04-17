@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @comment = Comment.new
     @new_post = Post.new
-    @posts = Post.where("wall_id = 0 or wall_id = user_id").order(created_at: :desc)
+    @posts = Post.where("wall_id = 0").order(created_at: :desc)
   end
 
   # /edit finds the post with the corresponding ID

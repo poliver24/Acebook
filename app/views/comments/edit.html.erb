@@ -1,0 +1,10 @@
+<div class="container">
+  <%= form_for @comment do |form| %>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  
+    <%= form.hidden_field :post_id, value: @comment.post_id %>
+    <%= form.submit "Save" %>
+  <% end %> 
+  </div>
+  

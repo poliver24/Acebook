@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:username]) || User.find(params[:id])
     @new_post = Post.new
     @posts = Post.where(wall_id: @user.id).order(created_at: :desc)
+    @comment = Comment.new
 
     if owner?(@user.id)
       @placeholder = "What's on your mind?"
