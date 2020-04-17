@@ -7,8 +7,9 @@ def new
 end
   
 def create
+  @post = Post.find(params[:comment][:post_id])
   @comment = current_user.comments.create(comment_params)
-  redirect_to root_path
+  redirect_to user_path(:id => @post.user.id)
 end
 
 private
