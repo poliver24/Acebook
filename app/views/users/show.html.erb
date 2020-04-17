@@ -1,9 +1,9 @@
-<div class="container" style="margin-left: 18em">
+<div class="container">
 
 <h2><%= @user.name %>'s Wall</h2>
 <% if current_user.id == @user.id %>
 <div class="dropdown" style="margin-bottom:20px;">
-  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f59a00; border-color: #f59a00">
+  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Choose background
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -37,13 +37,22 @@
       <%= distance_of_time_in_words_to_now(post.created_at)%> ago
     </div>
     <%= simple_format(post.message) %>
-
-    <h6>Comments</h6>
-
+    <hr>
+    <h5>Comments</h5>
+    <hr>
     <% post.comments.each do |comment|%>
-      <%=comment.user.name%> - <%=comment.body%><br>
-      <%= link_to 'Edit', edit_comment_path(comment) %>
-      <%= link_to "Delete", comment_path(comment), :method => :delete %>
+      <div class="media">
+        <div class="media-body">
+          <h6 class="media-heading user_name" style="color: #f59a00"><%=comment.user.name%></h6>
+          <div class="grey-text">
+            <%= distance_of_time_in_words_to_now(comment.created_at)%> ago
+          </div>
+          <p><%=comment.body%></p>
+          <%= link_to 'Edit', edit_comment_path(comment) %>
+          <%= link_to "Delete", comment_path(comment), :method => :delete %>
+          <hr>
+        </div>
+      </div>
     <%end%>
 
       <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
@@ -59,7 +68,7 @@
 </div>
 
 <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #f59a00; border-color: #f59a00 ">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
   <%= link_to "Edit Post", edit_post_path(post), :class => "dropdown-item" %>
