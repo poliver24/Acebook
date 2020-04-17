@@ -31,6 +31,7 @@
 
       <% post.comments.each do |comment|%>
         <%=comment.user.name%> - <%=comment.body%>
+        <%= link_to 'Edit', edit_comment_path(comment) %>
       <%end%>
 
         <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
