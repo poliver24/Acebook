@@ -7,17 +7,14 @@ def new
 end
   
 def create
-  @post = Post.find(params[:comment][:post_id])
   @comment = current_user.comments.create(comment_params)
-  redirect_to user_path(:id => @post.user.id)
+  redirect_to user_path(:id => @comment.post.wall_id)
 end
 
 def edit
-  p params
-  # @post = Post.find(params[:id])
   @comment = Comment.find(params[:id])
   if !owner?(@comment.user_id) || Time.now > (@comment.created_at + (600))
-    redirect_to user_path(:id => @comment.post_id), notice: "You cannot edit this post"
+    redirect_to user_path(:id => @comment.post.wall_id), notice: "You cannot edit this comment"
   end
 end
 
@@ -28,6 +25,18 @@ def update
   else
     render 'edit'
   end
+end
+
+def destroy
+  p params
+  @comment = Comment.find(params[:id])
+  if !owner?(@comment.user_id)
+    redirect_to user_path(:id => @comment.post.wall_id), notice: "You cannot delete this comment"
+  else
+    @comment.destroy
+    redirect_to user_path(:id => @comment.post.wall_id)
+  end
+
 end
 
 private

@@ -41,8 +41,9 @@
     <h6>Comments</h6>
 
     <% post.comments.each do |comment|%>
-      <%=comment.user.name%> - <%=comment.body%>
+      <%=comment.user.name%> - <%=comment.body%><br>
       <%= link_to 'Edit', edit_comment_path(comment) %>
+      <%= link_to "Delete", comment_path(comment), :method => :delete %>
     <%end%>
 
       <%= form_for @comment, url: url_for(controller: 'comments', action: 'create') do |form| %>
