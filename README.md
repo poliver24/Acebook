@@ -63,7 +63,7 @@ Additonally we were asked to include Real-Time chat functions, images, and comme
 - Puma
 - Sass-rails
 - Uglifier
-- sSimplecov
+- Simplecov
 - rubocop
 - Bootstrap
 - Jquery-rails
