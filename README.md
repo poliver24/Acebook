@@ -64,7 +64,7 @@ Additonally we were asked to include Real-Time chat functions, images, and comme
 - Sass-rails
 - Uglifier
 - Simplecov
-- rubocop
+- Rubocop
 - Bootstrap
 - Jquery-rails
 - Redis
